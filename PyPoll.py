@@ -62,7 +62,7 @@ with open(file_to_save,"w") as txt_file:
     txt_file.write(election_results)
 
     # 3. The percentage of votes each candidate won.
-
+    # 4. The total number of votes each candidate won.
     for candidate_name in candidate_votes:
         
         # Retrieve vote count.
@@ -72,10 +72,12 @@ with open(file_to_save,"w") as txt_file:
 
         #print(f"{candidate_name}: received {vote_percentage:.1f}% of the vote.")
 
-    # 4. The total number of votes each candidate won.
-    # 5. The winner of the election based on popular vote.
+        candidate_results = (f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
 
-        #print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+        print(candidate_results)
+        txt_file.write(candidate_results)
+
+    # 5. The winner of the election based on popular vote.
 
         if (votes > winning_count) and (vote_percentage > winning_percentage):
 
@@ -83,14 +85,13 @@ with open(file_to_save,"w") as txt_file:
             winning_percentage = vote_percentage
             winning_candidate = candidate_name
 
-
     # print(election_data)
-winning_candidate_summary = (
-    f"----------------------------\n"
-    f"Winner: {winning_candidate}\n"
-    f"Winning Vote Count: {winning_count:,}\n"
-    f"Winning Percentage: {winning_percentage:.1f}%\n"
-    f"----------------------------\n")
+    winning_candidate_summary = (
+        f"----------------------------\n"
+        f"Winner: {winning_candidate}\n"
+        f"Winning Vote Count: {winning_count:,}\n"
+        f"Winning Percentage: {winning_percentage:.1f}%\n"
+        f"----------------------------\n")
 
-#print(winning_candidate_summary)
-
+    print(winning_candidate_summary)
+    txt_file.write(winning_candidate_summary)
