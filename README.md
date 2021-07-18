@@ -1,3 +1,4 @@
+
 # Election_Analysis
 
 ## Project Overview
@@ -32,6 +33,8 @@ The analysis showed us that:
   - Raymon Anthony Doane: 3.1% (11,606)
 - The winner of the election was:
   - Diana DeGette who received 73.8% of the vote and 272,892 votes.
+ 
+ ![Election Results](https://user-images.githubusercontent.com/86527135/126083779-bdda661a-4031-4c0c-ae03-fa65124aec57.PNG)
  
 ## Election-Audit Summary
 We propose utilizing this script for other election results. For city/mayoral elections, we can initialize city and mayoral lists/dictionaries. For regulatory initiatives, instead of tracking the candidate we could track yes/no votes.
